@@ -1,0 +1,44 @@
+@BASE_URL = http://localhost:3001
+
+//LOGIN 
+POST {{BASE_URL}}/api/sessions
+Content-Type: application/json 
+
+{
+    "email": "mariobianchi@gmail.com",
+    "password": "banana"
+}
+
+###
+//Get sessione
+GET {{BASE_URL}}/api/sessions/current
+Content-Type: application/json
+
+###
+//LOGOUT
+DELETE {{BASE_URL}}/api/sessions/current
+
+###
+//Get trainmap
+GET {{BASE_URL}}/api/trainmap
+Content-Type: application/json
+
+###
+//Get leaderboard
+GET {{BASE_URL}}/api/leaderboard
+Content-Type: application/json
+
+###
+//Post start game
+POST {{BASE_URL}}/api/games/start
+Content-Type: application/json
+
+###
+POST {{BASE_URL}}/api/games/result
+Content-Type: application/json
+
+[
+  {"station1Name": "Shelbyville", "station2Name": "Quahog", "lineColour": "Verde"},
+  {"station1Name": "Springfield", "station2Name": "Shelbyville", "lineColour": "Verde"},
+  {"station1Name": "Fontana Oscura", "station2Name": "Springfield", "lineColour": "Verde"}
+]
